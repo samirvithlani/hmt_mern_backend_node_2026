@@ -41,6 +41,30 @@ app.get("/users",(req,res)=>{
     })
 })
 
+//localhost:3000/user/10
+app.get("/user/:id",(req,res)=>{
+    console.log("user api called")
+
+    const id = req.params.id;
+
+    res.json({
+        message:"user api called with id"+id
+    })
+})
+
+//localhost:3000/raj/20000/tcs
+app.get("/user/:name/:salary/:compnay",(req,res)=>{
+
+    const name = req.params.name
+    const salary = req.params.salary
+    const compnay = req.params.compnay
+
+    res.json({
+        message:`${name} is working in ${compnay} with salary ${salary}`
+    })
+
+})
+
 
 //server creation
 const PORT = 3000
