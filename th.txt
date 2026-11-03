@@ -1,0 +1,25 @@
+common moudle: require
+es module:  import statment
+
+
+express:
+server creation
+
+web server:
+
+native node js: HTTP module
+
+express js :
+
+npm i express
+
+
+development tool:
+
+npm i nodemon -g
+or
+npm i nodemon --dev
+
+node app.js
+
+nodemon app.js
