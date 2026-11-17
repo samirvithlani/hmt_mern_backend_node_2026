@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const DbConnection = require("./src/utils/DBConnection")
+DbConnection() //function call
 
 const user = {
   id: 1,

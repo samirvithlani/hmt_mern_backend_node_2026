@@ -32,3 +32,15 @@ GET: when data needs to send to frontend:
 POST:get data from frontend
 DELETE:delete data
 PUT:update
+
+mongodb:
+mongodb native package npm i mongodb
+
+mongoose :orm package
+
+npm i mongoose
+
+src
+ utils
+    DBConnection.js
+ models 
