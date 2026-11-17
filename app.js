@@ -54,6 +54,27 @@ app.get("/users",(req,res)=>{
     })
 })
 
+//localhost:3000/student/ram
+app.get("/student/:name",(req,res)=>{
+    //req.params
+    const name = req.params.name
+    res.json({message:"student api called..",name:name})
+})
+
+//localhost:3000/student1/ram/78/gtu
+app.get("/student1/:name/:marks/:uni",(req,res)=>{
+
+
+
+    const name = req.params.name
+    const marks = req.params.marks
+    const uni  = req.params.uni
+    res.json({
+        message:"student fetched.",
+        data:`${name} is studing in ${uni} and get ${marks} marks`
+    })
+})
+
 const PORT = 3000;
 //server create
 app.listen(PORT, () => {
