@@ -44,3 +44,9 @@ src
  utils
     DBConnection.js
  models 
+
+
+
+
+ models:
+    UserModel.js

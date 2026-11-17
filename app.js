@@ -3,6 +3,25 @@ const app = express();
 const DbConnection = require("./src/utils/DBConnection")
 DbConnection() //function call
 
+const userSchema = require("./src/models/UserModel")
+//userSchema == db.users
+
+//localhost:3000/userdb
+app.get("/userdb",async(req,res)=>{
+
+    //db.users.find()
+    const users = await userSchema.find()
+    res.json({
+        message:"data fetched from db",
+        data:users
+    })
+
+})
+
+
+
+
+
 const user = {
   id: 1,
   name: "ram",
