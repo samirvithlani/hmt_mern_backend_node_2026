@@ -47,33 +47,48 @@ app.get("/user", (req, res) => {
 });
 
 //localhost:3000/users
-app.get("/users",(req,res)=>{
-    res.json({
-        message:"users fetched",
-        users:users
-    })
-})
+app.get("/users", (req, res) => {
+  res.json({
+    message: "users fetched",
+    users: users,
+  });
+});
 
 //localhost:3000/student/ram
-app.get("/student/:name",(req,res)=>{
-    //req.params
-    const name = req.params.name
-    res.json({message:"student api called..",name:name})
-})
+app.get("/student/:name", (req, res) => {
+  //req.params
+  const name = req.params.name;
+  res.json({ message: "student api called..", name: name });
+});
 
 //localhost:3000/student1/ram/78/gtu
-app.get("/student1/:name/:marks/:uni",(req,res)=>{
+app.get("/student1/:name/:marks/:uni", (req, res) => {
+  const name = req.params.name;
+  const marks = req.params.marks;
+  const uni = req.params.uni;
+  res.json({
+    message: "student fetched.",
+    data: `${name} is studing in ${uni} and get ${marks} marks`,
+  });
+});
 
-
-
-    const name = req.params.name
-    const marks = req.params.marks
-    const uni  = req.params.uni
+//localhost:3000/finduser/1
+app.get("/finduser/:id", (req, res) => {
+  const id = req.params.id; //3
+  //js find
+  const foundUser = users.find((u) => {
+    return u.id == id;
+  });
+  if (foundUser) {
     res.json({
-        message:"student fetched.",
-        data:`${name} is studing in ${uni} and get ${marks} marks`
-    })
-})
+      message: "user found",
+      data: foundUser,
+    });
+  }
+  else{
+    res.json({message:"user not found"})
+  }
+});
 
 const PORT = 3000;
 //server create
